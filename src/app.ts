@@ -1,4 +1,4 @@
-import { ArrayObserver, customElement } from '@aurelia/runtime';
+import { customElement } from '@aurelia/runtime';
 
 let id = 0;
 class Todo {
@@ -6,8 +6,6 @@ class Todo {
   public id: number = id++;
   constructor(public description: string, public app: App) {}
 }
-
-type ObservedTodos = Todo[] & { $observer: ArrayObserver };
 
 @customElement({
   name: 'app',
@@ -23,7 +21,7 @@ export class App {
   public log: boolean = false;
   public count: number = 1;
   public description: string = 'Hello World';
-  public todos: ObservedTodos = <any>[];
+  public todos: Todo[] = [];
 
   public addTodo(): void {
     for (let i = 0; i < this.count; ++i) {
@@ -42,23 +40,7 @@ export class App {
   }
 
   public bound(): void {
-    Promise.resolve().then(() => {
-      this.todos.$observer.subscribe(this);
-      this.todos.$observer.subscribeBatched(this);
-    });
     console.log('app bound');
-  }
-
-  public handleChange(origin: string, args?: IArguments): void {
-    if (this.log) {
-      console.log('handleChange', origin, args);
-    }
-  }
-
-  public handleBatchedChange(indexMap: Array<number>): void {
-    if (this.log) {
-      console.log('handleBatchedChange', indexMap);
-    }
   }
 
   public attaching(): void {
@@ -79,7 +61,5 @@ export class App {
 
   public unbound(): void {
     console.log('app unbound');
-    this.todos.$observer.unsubscribe(this);
-    this.todos.$observer.unsubscribeBatched(this);
   }
 }
