@@ -1,0 +1,30 @@
+{
+  "name": "aurelia-vnext-starter",
+  "version": "0.1.1",
+  "description": "Simple starter app for Aurelia vNext",
+  "scripts": {
+    "build": "rimraf dist && gulp build",
+    "serve": "rimraf dist && gulp",
+    "start": "http-server -c-1 -p 3000 ."
+  },
+  "author": "fkleuver",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^8.10.22",
+    "browser-sync": "^2.24.7",
+    "browserify": "^16.2.2",
+    "fancy-log": "^1.3.2",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "http-server": "^0.11.1",
+    "rimraf": "^2.6.2",
+    "stringify": "^5.2.0",
+    "tsify": "^4.0.0",
+    "typescript": "^3.0.3",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {
+    "@aurelia/jit": "^0.1.1-dev.20180905"
+  }
+}
