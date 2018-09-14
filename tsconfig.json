@@ -3,7 +3,7 @@
     "allowJs": false,
     "experimentalDecorators": true,
     "lib": ["esnext", "dom"],
-    "module": "umd",
+    "module": "esnext",
     "moduleResolution": "node",
     "outDir": "dist",
     "rootDir": "src",

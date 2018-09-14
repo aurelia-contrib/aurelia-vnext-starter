@@ -1,4 +1,5 @@
 import { customElement } from '@aurelia/runtime';
+import view from './app.html';
 
 let id = 0;
 class Todo {
@@ -9,7 +10,7 @@ class Todo {
 
 @customElement({
   name: 'app',
-  templateOrNode: require('./app.html'),
+  templateOrNode: view,
   build: {
     required: true,
     compiler: 'default'

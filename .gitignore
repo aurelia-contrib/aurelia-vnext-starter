@@ -1,5 +1,6 @@
 .idea
 .DS_STORE
+.cache
 
 **/node_modules
 **/coverage
