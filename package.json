@@ -11,13 +11,13 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^8.10.22",
-    "http-server": "^0.11.1",
-    "parcel-bundler": "git+https://github.com/parcel-bundler/parcel.git#6dccfaa",
-    "parcel-plugin-typescript": "^1.0.0",
-    "rimraf": "^2.6.2",
-    "typescript": "^3.0.3"
+    "http-server": "latest",
+    "parcel-bundler": "git+https://github.com/parcel-bundler/parcel.git#master",
+    "parcel-plugin-typescript": "latest",
+    "rimraf": "latest",
+    "typescript": "latest"
   },
   "dependencies": {
-    "@aurelia/jit": "^0.1.1-dev.20180914"
+    "@aurelia/jit": "dev"
   }
 }
