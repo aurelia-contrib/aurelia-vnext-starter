@@ -1,9 +1,11 @@
+import { Test } from './test';
 import { BasicConfiguration } from '@aurelia/jit';
 import { Aurelia } from '@aurelia/runtime';
 import { App } from './app';
+import { Todo } from './todo';
 
 const au = window['au'] = new Aurelia()
-  .register(BasicConfiguration)
+  .register(BasicConfiguration, <any>Todo, <any>Test)
   .app({ host: document.querySelector('app'), component: new App() })
   .start();
 

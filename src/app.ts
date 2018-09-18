@@ -1,13 +1,8 @@
 import { customElement } from '@aurelia/runtime';
 import view from './app.html';
 import nameTagView from './name-tag.html';
-
-let id = 0;
-class Todo {
-  public done: boolean = false;
-  public id: number = id++;
-  constructor(public description: string, public app: App) {}
-}
+import { TodoItem, Todo } from './todo';
+import { Test } from './test';
 
 @customElement({
   name: 'app',
@@ -23,7 +18,7 @@ export class App {
   public log: boolean = false;
   public count: number = 1;
   public description: string = 'Hello World';
-  public todos: Todo[] = [];
+  public todos: TodoItem[] = [];
   public firstName = 'John';
   public lastName = 'Doe';
 
@@ -54,9 +49,14 @@ export class App {
     instructions: []
   };
 
+  public testSubject = {
+    description: 'test',
+    create() { return Test }
+  };
+
   public addTodo(): void {
     for (let i = 0; i < this.count; ++i) {
-      this.todos.push(new Todo(this.description, this));
+      this.todos.push(new TodoItem(this.description, this));
     }
   }
 
@@ -68,29 +68,5 @@ export class App {
     for (const todo of this.todos) {
       todo.done = !todo.done;
     }
-  }
-
-  public bound(): void {
-    console.log('app bound');
-  }
-
-  public attaching(): void {
-    console.log('app attaching');
-  }
-
-  public attached(): void {
-    console.log('app attached');
-  }
-
-  public detaching(): void {
-    console.log('app detaching');
-  }
-
-  public detached(): void {
-    console.log('app detached');
-  }
-
-  public unbound(): void {
-    console.log('app unbound');
   }
 }

@@ -1,0 +1,10 @@
+<template>
+  <div class="item">
+    <div class="content">
+      #${item.id} - ${item.app.description} - ${item.description}
+      <input type="checkbox" checked.two-way="item.done">
+      <span if.bind="item.done">Done</span>
+      <span else>Not Done</span>
+    </div>
+  </div>
+</template>
