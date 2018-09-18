@@ -27,8 +27,8 @@ export class App {
   public firstName = 'John';
   public lastName = 'Doe';
 
-  public nameTag = {
-    templateOrNode: `<template>\${firstName} \${lastName} (from code)</template>`,
+  public nameTagInline = {
+    templateOrNode: `<template>\${firstName} \${lastName} (from inline)</template>`,
     build: {
       required: true,
       compiler: 'default'
@@ -37,7 +37,7 @@ export class App {
   };
 
   public nameTagWrapper = {
-    templateOrNode: `<div><au-compose subject.bind="nameTag"></au-compose> (nested compose)</div>`,
+    templateOrNode: `<div><au-compose subject.bind="nameTagInline"></au-compose> (nested compose)</div>`,
     build: {
       required: true,
       compiler: 'default'
@@ -45,7 +45,7 @@ export class App {
     instructions: []
   };
 
-  public todosCount = {
+  public nameTagHtml = {
     templateOrNode: nameTagView,
     build: {
       required: true,
