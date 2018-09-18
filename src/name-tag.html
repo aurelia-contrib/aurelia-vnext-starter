@@ -1,3 +1,12 @@
 <template>
   ${firstName} ${lastName} (from html)
+  <input type="checkbox" checked.two-way="show">
+  <au-compose subject.bind="{
+    templateOrNode: '<template><div if.bind=\'show\'> ${firstName} ${lastName} (from nested html)</div><div else>Check it</div></template>',
+    build: {
+      required: true,
+      compiler: 'default'
+    },
+    instructions: []
+  }"></au-compose>
 </template>
