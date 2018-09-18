@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "allowJs": false,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["esnext", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "outDir": "dist",
     "rootDir": "src",
-    "sourceMap": true,
+    "sourceMap": false,
     "stripInternal": true,
     "target": "es2018"
   },

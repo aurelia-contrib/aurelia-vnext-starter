@@ -26,4 +26,18 @@
       </div>
     </div>
   </div>
+  <div class="ui form">
+    <div class="fields">
+      <div class="four wide field">
+        <label>First Name</label>
+        <input id="firstName" type="text" value.two-way="firstName">
+      </div>
+      <div class="four wide field">
+        <label>Last Name</label>
+        <input id="lastName" type="text" value.two-way="lastName">
+      </div>
+    </div>
+    <au-compose subject.bind="nameTag"></au-compose>
+    <au-compose subject.bind="nameTagWrapper"></au-compose>
+  </div>
 </template>

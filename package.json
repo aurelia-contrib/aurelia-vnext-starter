@@ -12,7 +12,7 @@
   "devDependencies": {
     "@types/node": "^8.10.22",
     "http-server": "latest",
-    "parcel-bundler": "git+https://github.com/parcel-bundler/parcel.git#master",
+    "parcel-bundler": "git+https://github.com/parcel-bundler/parcel.git#6dccfaa",
     "parcel-plugin-typescript": "latest",
     "rimraf": "latest",
     "typescript": "latest"

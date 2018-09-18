@@ -23,6 +23,26 @@ export class App {
   public count: number = 1;
   public description: string = 'Hello World';
   public todos: Todo[] = [];
+  public firstName = 'John';
+  public lastName = 'Doe';
+
+  public nameTag = {
+    templateOrNode: `<template>\${firstName} \${lastName}</template>`,
+    build: {
+      required: true,
+      compiler: 'default'
+    },
+    instructions: []
+  };
+
+  public nameTagWrapper = {
+    templateOrNode: `<div><au-compose subject.bind="nameTag"></au-compose></div>`,
+    build: {
+      required: true,
+      compiler: 'default'
+    },
+    instructions: []
+  };
 
   public addTodo(): void {
     for (let i = 0; i < this.count; ++i) {
