@@ -1,5 +1,6 @@
 import { customElement } from '@aurelia/runtime';
 import view from './app.html';
+import nameTagView from './name-tag.html';
 
 let id = 0;
 class Todo {
@@ -27,7 +28,7 @@ export class App {
   public lastName = 'Doe';
 
   public nameTag = {
-    templateOrNode: `<template>\${firstName} \${lastName}</template>`,
+    templateOrNode: `<template>\${firstName} \${lastName} (from code)</template>`,
     build: {
       required: true,
       compiler: 'default'
@@ -36,7 +37,16 @@ export class App {
   };
 
   public nameTagWrapper = {
-    templateOrNode: `<div><au-compose subject.bind="nameTag"></au-compose></div>`,
+    templateOrNode: `<div><au-compose subject.bind="nameTag"></au-compose> (nested compose)</div>`,
+    build: {
+      required: true,
+      compiler: 'default'
+    },
+    instructions: []
+  };
+
+  public todosCount = {
+    templateOrNode: nameTagView,
     build: {
       required: true,
       compiler: 'default'
